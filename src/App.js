@@ -16,6 +16,10 @@ const App = ()=> {
       setInputList("");
     }
   };
+  
+  const deleteItem = ()=>{
+    console.log("deleted"); 
+  }
 
   return(
     <>
@@ -28,9 +32,12 @@ const App = ()=> {
           <button className='add-button' onClick={listOfItems}>+</button>
           <ol>
             
-            {Items.map((itemval) => {
+            {Items.map((itemval , index) => {
               return <ToDoList 
                 text = {itemval} 
+                key= {index} 
+                id = {index}
+                onSelect = {deleteItem}
               />
             })}
           </ol>
