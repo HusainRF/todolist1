@@ -7,7 +7,11 @@ const ToDoList = (props) => {
         <div className="todo_style">
            
             <li> 
-              <button className="delete-button" onClick={props.onSelect}> x </button>
+              <button className="delete-button" onClick={
+                ()=> {
+                  props.onSelect(props.id);
+                }
+                }> x </button>
               {props.text}
             </li>
         </div>

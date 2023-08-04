@@ -17,8 +17,12 @@ const App = ()=> {
     }
   };
   
-  const deleteItem = ()=>{
-    console.log("deleted"); 
+  const deleteItem = (id)=>{
+    setItems((oldItems)=>{
+      return oldItems.filter((arrElement , index) =>{
+        return index !== id;
+      });
+    }); 
   }
 
   return(
